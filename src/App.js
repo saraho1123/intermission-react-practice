@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Form from './Form';
+import CardContainer from './CardContainer';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {ideas: []};
+  }
+
+  addCard = (cardInfo) => {
+    // adds a new card to this.state array
+    // needs to be called on another Child component
+    this.setState({ideas: [...this.state.ideas, cardInfo]})
+  }
+
+  render() {
+    return (
+      <div> 
+        <Form addCard={this.addCard} /> 
+        <CardContainer ideas={this.state.ideas} /> 
+      </div>
+    )
+  }
+
+  // 
 }
 
 export default App;
+
+
+// nested inside main App class
+// form component
+// area for all saved cards
+// in Card Container  - will have a nested Ideas component inside it. 
+
+// pass down the props
+// push up the actions
+
+/* whatever the name is on line 20, is what it will be called in child component */
+/* ... spread operator */
