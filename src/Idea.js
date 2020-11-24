@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Idea = (props) => {
-  console.log(props)
   return (
     <section>
       <h1 className="name">{props.name}</h1>

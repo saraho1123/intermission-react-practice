@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   deleteCard = (cardId) => {
-    console.log('here i am!')
     const remainingCards = this.state.ideas.filter(ideaCard => {
       return ideaCard.id !== cardId
     })

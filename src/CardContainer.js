@@ -2,7 +2,6 @@ import React from 'react';
 import Idea from './Idea';
 
 const CardContainer = (props) => {
-  console.log(props.removeCard)
   const allIdeas = props.ideas.map(idea => {
     return (
       <Idea  
