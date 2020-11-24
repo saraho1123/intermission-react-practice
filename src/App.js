@@ -20,12 +20,21 @@ class App extends Component {
     return (
       <div> 
         <Form addCard={this.addCard} /> 
-        <CardContainer ideas={this.state.ideas} /> 
+        <CardContainer 
+          ideas={this.state.ideas} 
+          removeCard={this.deleteCard} 
+        /> 
       </div>
     )
   }
 
-  // 
+  deleteCard = (cardId) => {
+    console.log('here i am!')
+    const remainingCards = this.state.ideas.filter(ideaCard => {
+      return ideaCard.id !== cardId
+    })
+    this.setState({ideas: remainingCards})
+  }
 }
 
 export default App;

@@ -21,15 +21,26 @@ class Form extends Component {
   render() {
     return (
       <form className="form"> 
-        <input className="input" name="name" value={this.state.name} onChange={this.changeHandler}> </input>
-        <input className="input" name="idea" value={this.state.idea} onChange={this.changeHandler}> </input>
-        <button type="submit" onClick={this.createCard}> Submit Card </button>
+        <input className="input" 
+          name="name" 
+          value={this.state.name} 
+          onChange={this.changeHandler}> 
+        </input>
+        <input 
+          className="input" 
+          name="idea" 
+          value={this.state.idea} 
+          onChange={this.changeHandler}> 
+        </input>
+        <button 
+          type="submit" 
+          onClick={this.createCard}> Submit Card 
+        </button>
       </form>
     )
   }
 
   changeHandler = (event) => {
-    console.log(event)
     this.setState({[event.target.name]: event.target.value})
   }
 }

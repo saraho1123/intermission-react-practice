@@ -2,10 +2,16 @@ import React from 'react';
 import Idea from './Idea';
 
 const CardContainer = (props) => {
-  console.log(props)
+  console.log(props.removeCard)
   const allIdeas = props.ideas.map(idea => {
     return (
-      <Idea name={idea.name} idea={idea.idea} id={idea.id}/>
+      <Idea  
+        remove={props.removeCard} 
+        key={idea.id} 
+        name={idea.name} 
+        idea={idea.idea} 
+        id={idea.id}
+      />
     )
     // delete method called here
   })
